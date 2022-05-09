@@ -28,4 +28,5 @@ Ryan Brisch
 - Alex Hageman
 - [MDN](https://developer.mozilla.org/en-US/)
 - [CSS-Tricks](https://css-tricks.com/snippets/javascript/select-random-item-array/)
-- Eric Sayer -[Github](https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc)
+- [Github](https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc)
+- Eric Sayer
