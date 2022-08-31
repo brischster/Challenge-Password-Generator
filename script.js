@@ -73,10 +73,29 @@ function generatePassword() {
 
   var passWordArray = charToBeUsed.split("");
 
+  function shuffleArray(arr) {
+    let currentIndex = arr.length,
+      randomIndex;
+
+    while (currentIndex != 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      [arr[currentIndex], arr[randomIndex]] = [
+        arr[randomIndex],
+        arr[currentIndex],
+      ];
+    }
+    return arr;
+  }
+
   // For loop used to make the random selections based off user input of what type of characters they would like included
   for (var i = 0; i < passwordLength; i++) {
+    shuffleArray(passWordArray);
     var randomCharSelection =
       passWordArray[Math.floor(Math.random() * passWordArray.length)];
+    console.log(passWordArray);
+    console.log(randomCharSelection);
     finalPassword += randomCharSelection;
   }
   return finalPassword;
