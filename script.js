@@ -10,11 +10,17 @@ var passwordLength;
 
 // Write password to the #password input
 function writePassword() {
+  charToBeUsed = "";
+  if (password !== "") {
+    finalPassword = "";
+  }
+  // passwordText.value = "";
   var password = generatePassword();
   // console.log(passWordArray);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+  console.log(passwordText);
 }
 
 function generatePassword() {
@@ -22,6 +28,12 @@ function generatePassword() {
   passwordLength = prompt(
     "What would you like the length of your password to be? Must be between 8 & 128 characters."
   );
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert(
+      `Password must have minimum of 10 characters and a max of 128, please select again`
+    );
+    return generatePassword();
+  }
   var includeLowercase = confirm(
     "Would you like to include lowercase letters in your password?"
   );
@@ -67,7 +79,6 @@ function generatePassword() {
       passWordArray[Math.floor(Math.random() * passWordArray.length)];
     finalPassword += randomCharSelection;
   }
-  console.log(password);
   return finalPassword;
 }
 // Add event listener to generate button
